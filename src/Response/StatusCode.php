@@ -154,6 +154,9 @@ class StatusCode
         511 => 'Network Authentication Required',
     ];
 
+    /**
+     * Gets the standard textual representation of an HTTP status code
+     */
     public function getText(int $numeric): string
     {
         return $this->statusTexts[$numeric];
