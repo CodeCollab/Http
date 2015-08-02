@@ -156,6 +156,10 @@ class StatusCode
 
     /**
      * Gets the standard textual representation of an HTTP status code
+     *
+     * @param int $numeric The numerical representation of the status code
+     *
+     * @return string The textual representation of the status code
      */
     public function getText(int $numeric): string
     {
