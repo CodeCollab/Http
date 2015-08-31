@@ -4,101 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2a433378b372b1e836a0078021bddc39",
-    "packages": [
-        {
-            "name": "codecollab/encryption",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/CodeCollab/Encryption.git",
-                "reference": "d3874c62d35fe65e8700ca3ec45abd7a430564f4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/CodeCollab/Encryption/zipball/d3874c62d35fe65e8700ca3ec45abd7a430564f4",
-                "reference": "d3874c62d35fe65e8700ca3ec45abd7a430564f4",
-                "shasum": ""
-            },
-            "require": {
-                "defuse/php-encryption": "1.2.*",
-                "php": ">=7.0-dev"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.4.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "CodeCollab\\Encryption\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "See the LICENSE file"
-            ],
-            "authors": [
-                {
-                    "name": "Pieter Hordijk",
-                    "role": "Lead"
-                }
-            ],
-            "description": "Encryption package of the CodeCollab project",
-            "homepage": "https://github.com/CodeCollab/Encryption",
-            "keywords": [
-                "Rijndael",
-                "codecollab",
-                "encryption",
-                "security"
-            ],
-            "time": "2015-08-29 01:31:25"
-        },
-        {
-            "name": "defuse/php-encryption",
-            "version": "v1.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/defuse/php-encryption.git",
-                "reference": "b87737b2eec06b13f025cabea847338fa203d1b4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/defuse/php-encryption/zipball/b87737b2eec06b13f025cabea847338fa203d1b4",
-                "reference": "b87737b2eec06b13f025cabea847338fa203d1b4",
-                "shasum": ""
-            },
-            "require": {
-                "ext-mcrypt": "*",
-                "ext-openssl": "*",
-                "php": ">=5.4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "Crypto.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Taylor Hornby",
-                    "email": "havoc@defuse.ca"
-                }
-            ],
-            "description": "Secure PHP Encryption Library",
-            "keywords": [
-                "aes",
-                "cipher",
-                "encryption",
-                "mcrypt",
-                "security"
-            ],
-            "time": "2015-03-14 20:27:45"
-        }
-    ],
+    "hash": "82b6e3d55d17a63103c85a4b363b5f84",
+    "packages": [],
     "packages-dev": [
         {
             "name": "doctrine/instantiator",
@@ -551,12 +458,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "672bc25341c151a93b71a8950f1d96317aa9cfe2"
+                "reference": "764a68d4719484815583fa1d003c1f23fb046c61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/672bc25341c151a93b71a8950f1d96317aa9cfe2",
-                "reference": "672bc25341c151a93b71a8950f1d96317aa9cfe2",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/764a68d4719484815583fa1d003c1f23fb046c61",
+                "reference": "764a68d4719484815583fa1d003c1f23fb046c61",
                 "shasum": ""
             },
             "require": {
@@ -617,7 +524,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-08-27 07:54:56"
+            "time": "2015-08-31 17:25:25"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -1142,8 +1049,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "php": 20,
-        "codecollab/encryption": 20
+        "php": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

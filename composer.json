@@ -17,8 +17,7 @@
     },
     "minimum-stability": "dev",
     "require": {
-        "php": ">=7.0-dev",
-        "codecollab/encryption": "dev-master"
+        "php": ">=7.0-dev"
     },
     "require-dev": {
         "phpunit/phpunit": "^5"
