@@ -489,7 +489,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextContinue()
     {
@@ -497,7 +497,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextSwitchingProtocols()
     {
@@ -505,7 +505,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextOk()
     {
@@ -513,7 +513,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextCreated()
     {
@@ -521,7 +521,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextAccepted()
     {
@@ -529,7 +529,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextNonAuthoritativeInformation()
     {
@@ -537,7 +537,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextNoContent()
     {
@@ -545,7 +545,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextResetContent()
     {
@@ -553,7 +553,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextPartialContent()
     {
@@ -561,7 +561,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextMultiStatus()
     {
@@ -569,7 +569,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextAlreadyReported()
     {
@@ -577,7 +577,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextImUsed()
     {
@@ -585,7 +585,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextMultipleChoices()
     {
@@ -593,7 +593,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextMovedPermanently()
     {
@@ -601,7 +601,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextFound()
     {
@@ -609,7 +609,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextSeeOther()
     {
@@ -617,7 +617,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextNotModified()
     {
@@ -625,7 +625,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextUseProxy()
     {
@@ -633,7 +633,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextReserved()
     {
@@ -641,7 +641,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextTemporaryRedirect()
     {
@@ -649,7 +649,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextPermanentRedirect()
     {
@@ -657,7 +657,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextBadRequest()
     {
@@ -665,7 +665,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextUnauthorized()
     {
@@ -673,7 +673,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextPaymentRequired()
     {
@@ -681,7 +681,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextForbidden()
     {
@@ -689,7 +689,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextNotFound()
     {
@@ -697,7 +697,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextMethodNotAllowed()
     {
@@ -705,7 +705,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextNotAcceptable()
     {
@@ -713,7 +713,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextProxyAuthenticationRequired()
     {
@@ -721,7 +721,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextRequestTimeout()
     {
@@ -729,7 +729,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextConflict()
     {
@@ -737,7 +737,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextGone()
     {
@@ -745,7 +745,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextLengthRequired()
     {
@@ -753,7 +753,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextPreconditionFailed()
     {
@@ -761,7 +761,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextRequestEntityTooLarge()
     {
@@ -769,7 +769,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextRequestUriTooLong()
     {
@@ -777,7 +777,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextUnsupportedMediaType()
     {
@@ -785,7 +785,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextRequestedRangeNotSatisfiable()
     {
@@ -793,7 +793,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextExpectationFailed()
     {
@@ -801,7 +801,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextIAmATeapot()
     {
@@ -809,7 +809,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextUnprocessableEntity()
     {
@@ -817,7 +817,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextLocked()
     {
@@ -825,7 +825,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextFailedDependency()
     {
@@ -833,7 +833,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextReservedForWebdavAdvancedCollectionsExpiredProposal()
     {
@@ -844,7 +844,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextUpgradeRequired()
     {
@@ -852,7 +852,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextPreconditionRequired()
     {
@@ -860,7 +860,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextTooManyRequests()
     {
@@ -868,7 +868,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextRequestHeaderFieldsTooLarge()
     {
@@ -879,7 +879,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextInternalServerError()
     {
@@ -887,7 +887,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextNotImplemented()
     {
@@ -895,7 +895,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextBadGateway()
     {
@@ -903,7 +903,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextServiceUnavailable()
     {
@@ -911,7 +911,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextGatewayTimeout()
     {
@@ -919,7 +919,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextHttpVersionNotSupported()
     {
@@ -927,7 +927,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextVariantAlsoNegotiatesExperimental()
     {
@@ -938,7 +938,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextInsufficientStorage()
     {
@@ -946,7 +946,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextLoopDetected()
     {
@@ -954,7 +954,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextNotExtended()
     {
@@ -962,7 +962,7 @@ class StatusCodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers CodeCollab\Http\Response\Response\StatusCode::getText
+     * @covers CodeCollab\Http\Response\StatusCode::getText
      */
     public function testGetTextNetworkAuthenticationRequired()
     {
