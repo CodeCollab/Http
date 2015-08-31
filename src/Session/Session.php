@@ -56,4 +56,14 @@ interface Session
      * @param mixed $offset The offset to unset
      */
     public function unset($offset);
+
+    /**
+     * Regenerates the session id
+     */
+    public function regenerate();
+
+    /**
+     * Destroys a session including all data
+     */
+    public function destroy();
 }
