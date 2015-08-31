@@ -14,6 +14,8 @@
  */
 namespace CodeCollab\Http\Cookie;
 
+use CodeCollab\Encryption\Encryptor;
+
 /**
  * Cookie factory
  *
@@ -24,6 +26,11 @@ namespace CodeCollab\Http\Cookie;
  */
 class Factory
 {
+    /**
+     * @var \CodeCollab\Encryption\Encryptor Instance of an encryptor
+     */
+    private $encryptor;
+
     /**
      * @var string The domain of the cookies
      */
@@ -37,13 +44,15 @@ class Factory
     /**
      * Creates instance
      *
-     * @param string $domain The domain of the cookies
-     * @param bool   $secure Whether the cookies should only be sent over SSL/TLS connections
+     * @param \CodeCollab\Encryption\Encryptor $encryptor Instance of an encryptor
+     * @param string                           $domain    The domain of the cookies
+     * @param bool                             $secure    Whether the cookies should only be sent over SSL/TLS connections
      */
-    public function __construct(string $domain, bool $secure)
+    public function __construct(Encryptor $encryptor, string $domain, bool $secure)
     {
-        $this->domain = $domain;
-        $this->secure = $secure;
+        $this->encryptor = $encryptor;
+        $this->domain    = $domain;
+        $this->secure    = $secure;
     }
 
     /**
@@ -57,6 +66,6 @@ class Factory
      */
     public function build(string $key, $value, \DateTime $expire = null): Cookie
     {
-        return new Cookie($key, $value, $expire, '/', $this->domain, $this->secure);
+        return new Cookie($key, $this->encryptor->encrypt($value), $expire, '/', $this->domain, $this->secure);
     }
 }

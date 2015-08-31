@@ -12,9 +12,11 @@ class FactoryTest extends \PHPUnit_Framework_TestCase
      */
     public function testBuild()
     {
+        $encryptor = $this->getMock('CodeCollab\Encryption\Encryptor');
+
         $this->assertInstanceof(
             'CodeCollab\Http\Cookie\Cookie',
-            (new Factory('.example.com', true))->build('foo', 'bar', new \DateTime())
+            (new Factory($encryptor, '.example.com', true))->build('foo', 'bar', new \DateTime())
         );
     }
 }
