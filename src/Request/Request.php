@@ -127,7 +127,7 @@ class Request
     }
 
     /**
-     * Gets a post variable
+     * Gets a server variable
      *
      * @param string $key The name of the post variable to retrieve
      *
@@ -140,6 +140,16 @@ class Request
         }
 
         return '';
+    }
+
+    /**
+     * Gets all server variables
+     *
+     * @return array The server variables
+     */
+    public function serverArray(): array
+    {
+        return $this->server;
     }
 
     /**
@@ -159,6 +169,16 @@ class Request
     }
 
     /**
+     * Gets all headers
+     *
+     * @return array The headers
+     */
+    public function headerArray(): array
+    {
+        return $this->headers;
+    }
+
+    /**
      * Gets a get variable
      *
      * @param string $key The name of the get variable to retrieve
@@ -172,6 +192,16 @@ class Request
         }
 
         return '';
+    }
+
+    /**
+     * Gets all get variables
+     *
+     * @return array The get variables
+     */
+    public function getArray(): array
+    {
+        return $this->get;
     }
 
     /**
@@ -191,6 +221,16 @@ class Request
     }
 
     /**
+     * Gets all post variables
+     *
+     * @return array The post variables
+     */
+    public function postArray(): array
+    {
+        return $this->post;
+    }
+
+    /**
      * Gets an item from the files
      *
      * @param string $key The name of the file to retrieve
@@ -207,6 +247,16 @@ class Request
     }
 
     /**
+     * Gets all files
+     *
+     * @return array The file
+     */
+    public function filesArray(): array
+    {
+        return $this->files;
+    }
+
+    /**
      * Gets a cookie
      *
      * @param string $key The name of the cookie to retrieve
@@ -220,6 +270,16 @@ class Request
         }
 
         return '';
+    }
+
+    /**
+     * Gets all cookies
+     *
+     * @return array The cookies
+     */
+    public function cookieArray(): array
+    {
+        return $this->cookies;
     }
 
     /**

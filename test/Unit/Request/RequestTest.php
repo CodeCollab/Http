@@ -119,6 +119,27 @@ class RequestTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('1.1', $request->server('SERVER_PROTOCOL'));
     }
 
+    /**
+     * @covers CodeCollab\Http\Request\Request::__construct
+     * @covers CodeCollab\Http\Request\Request::processServerVariables
+     * @covers CodeCollab\Http\Request\Request::serverArray
+     */
+    public function testServerArray()
+    {
+        $request = new Request(
+            $this->baseRequestData['server'],
+            $this->baseRequestData['get'],
+            $this->baseRequestData['post'],
+            $this->baseRequestData['files'],
+            $this->baseRequestData['cookies'],
+            $this->baseRequestData['input']
+        );
+
+        $server = array_merge($this->baseRequestData['server'], ['SERVER_PROTOCOL' => '1.1', 'REQUEST_URI_PATH' => '/']);
+
+        $this->assertSame($server, $request->serverArray());
+    }
+
    /**
      * @covers CodeCollab\Http\Request\Request::__construct
      * @covers CodeCollab\Http\Request\Request::header
@@ -213,6 +234,25 @@ class RequestTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('bar', $request->header('CONTENT-TYPE'));
     }
 
+    /**
+     * @covers CodeCollab\Http\Request\Request::__construct
+     * @covers CodeCollab\Http\Request\Request::processServerVariables
+     * @covers CodeCollab\Http\Request\Request::headerArray
+     */
+    public function testHeaderArray()
+    {
+        $request = new Request(
+            $this->baseRequestData['server'] + ['HTTP_FOOBAR' => 'bar'],
+            $this->baseRequestData['get'],
+            $this->baseRequestData['post'],
+            $this->baseRequestData['files'],
+            $this->baseRequestData['cookies'],
+            $this->baseRequestData['input']
+        );
+
+        $this->assertSame(['FOOBAR' => 'bar'], $request->headerArray());
+    }
+
    /**
      * @covers CodeCollab\Http\Request\Request::__construct
      * @covers CodeCollab\Http\Request\Request::get
@@ -247,6 +287,24 @@ class RequestTest extends \PHPUnit_Framework_TestCase
         );
 
         $this->assertSame('bar', $request->get('foo'));
+    }
+
+    /**
+     * @covers CodeCollab\Http\Request\Request::__construct
+     * @covers CodeCollab\Http\Request\Request::getArray
+     */
+    public function testGetArray()
+    {
+        $request = new Request(
+            $this->baseRequestData['server'],
+            $this->baseRequestData['get'] + ['foo' => 'bar'],
+            $this->baseRequestData['post'],
+            $this->baseRequestData['files'],
+            $this->baseRequestData['cookies'],
+            $this->baseRequestData['input']
+        );
+
+        $this->assertSame(['foo' => 'bar'], $request->getArray());
     }
 
    /**
@@ -285,6 +343,24 @@ class RequestTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('bar', $request->post('foo'));
     }
 
+    /**
+     * @covers CodeCollab\Http\Request\Request::__construct
+     * @covers CodeCollab\Http\Request\Request::postArray
+     */
+    public function testPostArray()
+    {
+        $request = new Request(
+            $this->baseRequestData['server'],
+            $this->baseRequestData['get'],
+            $this->baseRequestData['post'] + ['foo' => 'bar'],
+            $this->baseRequestData['files'],
+            $this->baseRequestData['cookies'],
+            $this->baseRequestData['input']
+        );
+
+        $this->assertSame(['foo' => 'bar'], $request->postArray());
+    }
+
    /**
      * @covers CodeCollab\Http\Request\Request::__construct
      * @covers CodeCollab\Http\Request\Request::files
@@ -321,6 +397,24 @@ class RequestTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(['bar' => 'baz'], $request->files('foo'));
     }
 
+    /**
+     * @covers CodeCollab\Http\Request\Request::__construct
+     * @covers CodeCollab\Http\Request\Request::filesArray
+     */
+    public function testFilesArray()
+    {
+        $request = new Request(
+            $this->baseRequestData['server'],
+            $this->baseRequestData['get'],
+            $this->baseRequestData['post'],
+            $this->baseRequestData['files'] + ['foo' => ['bar' => 'baz']],
+            $this->baseRequestData['cookies'],
+            $this->baseRequestData['input']
+        );
+
+        $this->assertSame(['foo' => ['bar' => 'baz']], $request->filesArray());
+    }
+
    /**
      * @covers CodeCollab\Http\Request\Request::__construct
      * @covers CodeCollab\Http\Request\Request::cookie
@@ -355,6 +449,24 @@ class RequestTest extends \PHPUnit_Framework_TestCase
         );
 
         $this->assertSame('bar', $request->cookie('foo'));
+    }
+
+    /**
+     * @covers CodeCollab\Http\Request\Request::__construct
+     * @covers CodeCollab\Http\Request\Request::cookieArray
+     */
+    public function testCookiesArray()
+    {
+        $request = new Request(
+            $this->baseRequestData['server'],
+            $this->baseRequestData['get'],
+            $this->baseRequestData['post'],
+            $this->baseRequestData['files'],
+            $this->baseRequestData['cookies'] + ['foo' => 'bar'],
+            $this->baseRequestData['input']
+        );
+
+        $this->assertSame(['foo' => 'bar'], $request->cookieArray());
     }
 
     /**
