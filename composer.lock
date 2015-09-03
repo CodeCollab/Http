@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/CodeCollab/Encryption.git",
-                "reference": "d3874c62d35fe65e8700ca3ec45abd7a430564f4"
+                "reference": "e34d1722c5ed383f259d3d0b32ec0ed079e54683"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CodeCollab/Encryption/zipball/d3874c62d35fe65e8700ca3ec45abd7a430564f4",
-                "reference": "d3874c62d35fe65e8700ca3ec45abd7a430564f4",
+                "url": "https://api.github.com/repos/CodeCollab/Encryption/zipball/e34d1722c5ed383f259d3d0b32ec0ed079e54683",
+                "reference": "e34d1722c5ed383f259d3d0b32ec0ed079e54683",
                 "shasum": ""
             },
             "require": {
@@ -25,7 +25,7 @@
                 "php": ">=7.0-dev"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.4.*"
+                "phpunit/phpunit": "^5"
             },
             "type": "library",
             "autoload": {
@@ -51,7 +51,7 @@
                 "encryption",
                 "security"
             ],
-            "time": "2015-08-29 01:31:25"
+            "time": "2015-08-31 15:25:07"
         },
         {
             "name": "defuse/php-encryption",
@@ -311,16 +311,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "751653e81e3fcbddbe026f36e6e16fafd0a19f46"
+                "reference": "4308b3a44ddba35e298792f22e8f3b0685f31191"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/751653e81e3fcbddbe026f36e6e16fafd0a19f46",
-                "reference": "751653e81e3fcbddbe026f36e6e16fafd0a19f46",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/4308b3a44ddba35e298792f22e8f3b0685f31191",
+                "reference": "4308b3a44ddba35e298792f22e8f3b0685f31191",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3",
+                "php": ">=5.6",
                 "phpunit/php-file-iterator": "~1.3",
                 "phpunit/php-text-template": "~1.2",
                 "phpunit/php-token-stream": "~1.3",
@@ -329,7 +329,7 @@
             },
             "require-dev": {
                 "ext-xdebug": ">=2.1.4",
-                "phpunit/phpunit": "~4"
+                "phpunit/phpunit": "~5"
             },
             "suggest": {
                 "ext-dom": "*",
@@ -339,7 +339,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.2.x-dev"
+                    "dev-master": "3.0.x-dev"
                 }
             },
             "autoload": {
@@ -365,7 +365,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-08-17 07:51:01"
+            "time": "2015-09-02 07:03:47"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -551,12 +551,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "672bc25341c151a93b71a8950f1d96317aa9cfe2"
+                "reference": "bbcc371da7d9c7d58d62f895156a87c395695a39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/672bc25341c151a93b71a8950f1d96317aa9cfe2",
-                "reference": "672bc25341c151a93b71a8950f1d96317aa9cfe2",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/bbcc371da7d9c7d58d62f895156a87c395695a39",
+                "reference": "bbcc371da7d9c7d58d62f895156a87c395695a39",
                 "shasum": ""
             },
             "require": {
@@ -568,7 +568,7 @@
                 "myclabs/deep-copy": "~1.3",
                 "php": ">=5.6",
                 "phpspec/prophecy": "^1.3.1",
-                "phpunit/php-code-coverage": "~2.1",
+                "phpunit/php-code-coverage": "~3.0",
                 "phpunit/php-file-iterator": "~1.4",
                 "phpunit/php-text-template": "~1.2",
                 "phpunit/php-timer": ">=1.0.6",
@@ -617,7 +617,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-08-27 07:54:56"
+            "time": "2015-09-02 07:15:35"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -625,12 +625,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "644047ce4d8b91d469b5638412c41edd52394cac"
+                "reference": "4f526b7e2c42cacf32c86e1e0c9ab9d3b24273cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/644047ce4d8b91d469b5638412c41edd52394cac",
-                "reference": "644047ce4d8b91d469b5638412c41edd52394cac",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/4f526b7e2c42cacf32c86e1e0c9ab9d3b24273cf",
+                "reference": "4f526b7e2c42cacf32c86e1e0c9ab9d3b24273cf",
                 "shasum": ""
             },
             "require": {
@@ -673,7 +673,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2015-08-19 09:14:17"
+            "time": "2015-09-02 07:30:58"
         },
         {
             "name": "sebastian/comparator",
