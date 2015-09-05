@@ -131,10 +131,8 @@ class Response
 
     /**
      * Sends the response to the client
-     *
-     * @return string The response body
      */
-    public function send(): string
+    public function send()
     {
         $this->sendCookies();
 
