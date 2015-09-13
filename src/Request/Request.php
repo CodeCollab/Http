@@ -19,6 +19,8 @@
  */
 namespace CodeCollab\Http\Request;
 
+use CodeCollab\Encryption\Decryptor;
+
 /**
  * Request class
  *
@@ -29,6 +31,11 @@ namespace CodeCollab\Http\Request;
  */
 class Request
 {
+    /**
+     * @var \CodeCollab\Encryption\Decryptor Instance of a decryptor
+     */
+    private $decryptor;
+
     /**
      * @var array The SERVER variables
      */
@@ -72,22 +79,32 @@ class Request
     /**
      * Creates instance
      *
-     * @param array  $server  The SERVER variables
-     * @param array  $get     The GET variables
-     * @param array  $post    The POST variables
-     * @param array  $files   The FILES variables
-     * @param array  $cookies The COOKIE variables
-     * @param string $input   The body of the request
+     * @param \CodeCollab\Encryption\Decryptor $decryptor Instance of a decryptor
+     * @param array                            $server    The SERVER variables
+     * @param array                            $get       The GET variables
+     * @param array                            $post      The POST variables
+     * @param array                            $files     The FILES variables
+     * @param array                            $cookies   The COOKIE variables
+     * @param string                           $input     The body of the request
      */
-    public function __construct(array $server, array $get, array $post, array $files, array $cookies, string $input)
+    public function __construct(
+        Decryptor $decryptor,
+        array $server,
+        array $get,
+        array $post,
+        array $files,
+        array $cookies,
+        string $input
+    )
     {
         $this->processServerVariables($server);
 
-        $this->get     = $get;
-        $this->post    = $post;
-        $this->files   = $files;
-        $this->cookies = $cookies;
-        $this->input   = $input;
+        $this->decryptor = $decryptor;
+        $this->get       = $get;
+        $this->post      = $post;
+        $this->files     = $files;
+        $this->cookies   = $cookies;
+        $this->input     = $input;
     }
 
     /**
@@ -266,7 +283,7 @@ class Request
     public function cookie(string $key): string
     {
         if (array_key_exists($key, $this->cookies)) {
-            return $this->cookies[$key];
+            return $this->decryptor->decrypt($this->cookies[$key]);
         }
 
         return '';
@@ -279,7 +296,9 @@ class Request
      */
     public function cookieArray(): array
     {
-        return $this->cookies;
+        return array_map(function($value) {
+            return $this->decryptor->decrypt($value);
+        }, $this->cookies);
     }
 
     /**
@@ -306,7 +325,7 @@ class Request
      * Gets the base URL of the request
      *
      * The base URL consist of the protocol (http(s)), the domain name and
-     * the port number when using a non standard port
+     * the port number when using a non standard port. E.g. https://example.com:8080
      *
      * @return string The base URL
      */

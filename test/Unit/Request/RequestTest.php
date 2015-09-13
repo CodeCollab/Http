@@ -32,6 +32,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testServerWithoutBeingSet()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             $this->baseRequestData['server'],
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
@@ -51,6 +52,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testServerWithBeingSet()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             $this->baseRequestData['server'] + ['foo' => 'bar'],
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
@@ -70,6 +72,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testServerWithRequestUri()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             $this->baseRequestData['server'],
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
@@ -89,6 +92,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testServerWithRequestUriPath()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             $this->baseRequestData['server'],
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
@@ -108,6 +112,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testServerWithProtocol()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             $this->baseRequestData['server'],
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
@@ -127,6 +132,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testServerArray()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             $this->baseRequestData['server'],
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
@@ -147,6 +153,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testHeaderWithoutBeingSet()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             $this->baseRequestData['server'],
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
@@ -166,6 +173,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testHeaderWithBeingSet()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             $this->baseRequestData['server'] + ['HTTP_foo' => 'bar'],
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
@@ -185,6 +193,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testHeaderConvertsUnderscoresToDashes()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             $this->baseRequestData['server'] + ['HTTP_foo_bar_baz' => 'bar'],
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
@@ -204,6 +213,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testHeaderContentLength()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             $this->baseRequestData['server'] + ['CONTENT_LENGTH' => 'bar'],
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
@@ -223,6 +233,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testHeaderContentType()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             $this->baseRequestData['server'] + ['CONTENT_TYPE' => 'bar'],
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
@@ -242,6 +253,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testHeaderArray()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             $this->baseRequestData['server'] + ['HTTP_FOOBAR' => 'bar'],
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
@@ -260,6 +272,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testGetWithoutBeingSet()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             $this->baseRequestData['server'],
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
@@ -278,6 +291,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testGetWithBeingSet()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             $this->baseRequestData['server'],
             $this->baseRequestData['get'] + ['foo' => 'bar'],
             $this->baseRequestData['post'],
@@ -296,6 +310,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testGetArray()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             $this->baseRequestData['server'],
             $this->baseRequestData['get'] + ['foo' => 'bar'],
             $this->baseRequestData['post'],
@@ -314,6 +329,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testPostWithoutBeingSet()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             $this->baseRequestData['server'],
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
@@ -332,6 +348,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testPostWithBeingSet()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             $this->baseRequestData['server'],
             $this->baseRequestData['get'],
             $this->baseRequestData['post'] + ['foo' => 'bar'],
@@ -350,6 +367,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testPostArray()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             $this->baseRequestData['server'],
             $this->baseRequestData['get'],
             $this->baseRequestData['post'] + ['foo' => 'bar'],
@@ -368,6 +386,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testFilesWithoutBeingSet()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             $this->baseRequestData['server'],
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
@@ -386,6 +405,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testFilesWithBeingSet()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             $this->baseRequestData['server'],
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
@@ -404,6 +424,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testFilesArray()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             $this->baseRequestData['server'],
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
@@ -422,6 +443,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testCookiesWithoutBeingSet()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             $this->baseRequestData['server'],
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
@@ -439,7 +461,17 @@ class RequestTest extends \PHPUnit_Framework_TestCase
      */
     public function testCookiesWithBeingSet()
     {
+        $decryptor = $this->getMock('CodeCollab\Encryption\Decryptor');
+
+        $decryptor
+            ->expects($this->once())
+            ->method('decrypt')
+            ->with($this->equalTo('bar'))
+            ->willReturn('decryptedbar')
+        ;
+
         $request = new Request(
+            $decryptor,
             $this->baseRequestData['server'],
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
@@ -448,7 +480,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
             $this->baseRequestData['input']
         );
 
-        $this->assertSame('bar', $request->cookie('foo'));
+        $this->assertSame('decryptedbar', $request->cookie('foo'));
     }
 
     /**
@@ -457,16 +489,33 @@ class RequestTest extends \PHPUnit_Framework_TestCase
      */
     public function testCookiesArray()
     {
+        $decryptor = $this->getMock('CodeCollab\Encryption\Decryptor');
+
+        $decryptor
+            ->expects($this->at(0))
+            ->method('decrypt')
+            ->with($this->equalTo('bar'))
+            ->willReturn('decryptedbar')
+        ;
+
+        $decryptor
+            ->expects($this->at(1))
+            ->method('decrypt')
+            ->with($this->equalTo('qux'))
+            ->willReturn('decryptedqux')
+        ;
+
         $request = new Request(
+            $decryptor,
             $this->baseRequestData['server'],
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
             $this->baseRequestData['files'],
-            $this->baseRequestData['cookies'] + ['foo' => 'bar'],
+            $this->baseRequestData['cookies'] + ['foo' => 'bar', 'baz' => 'qux'],
             $this->baseRequestData['input']
         );
 
-        $this->assertSame(['foo' => 'bar'], $request->cookieArray());
+        $this->assertSame(['foo' => 'decryptedbar', 'baz' => 'decryptedqux'], $request->cookieArray());
     }
 
     /**
@@ -476,6 +525,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testGetBody()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             $this->baseRequestData['server'],
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
@@ -494,6 +544,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testIsEncryptedNoHttpsHeader()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             $this->baseRequestData['server'],
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
@@ -512,6 +563,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testIsEncryptedHttpsHeaderContainsOff()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             $this->baseRequestData['server'] + ['HTTPS' => 'off'],
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
@@ -531,6 +583,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testIsEncryptedHttpsEnabled()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             $this->baseRequestData['server'] + ['HTTPS' => 'on'],
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
@@ -552,6 +605,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testGetBaseUrlNoSslStandardPort()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             $this->baseRequestData['server'],
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
@@ -573,6 +627,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testGetBaseUrlSslStandardPort()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             array_merge($this->baseRequestData['server'], ['HTTPS' => 'on', 'SERVER_PORT' => '443']),
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
@@ -594,6 +649,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testGetBaseUrlNoSslNonStandardPort()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             array_merge($this->baseRequestData['server'], ['SERVER_PORT' => '8080']),
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
@@ -614,6 +670,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testStartsWithDoesStartWith()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             array_merge($this->baseRequestData['server'], ['REQUEST_URI' => '/foo/bar']),
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
@@ -634,6 +691,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testStartsWithDoesNotStartWith()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             array_merge($this->baseRequestData['server'], ['REQUEST_URI' => '/foo/bar']),
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
@@ -654,6 +712,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testMatchesDoesMatch()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             array_merge($this->baseRequestData['server'], ['REQUEST_URI' => '/foo/bar']),
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
@@ -674,6 +733,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     public function testMatchesDoesNotMatch()
     {
         $request = new Request(
+            $this->getMock('CodeCollab\Encryption\Decryptor'),
             array_merge($this->baseRequestData['server'], ['REQUEST_URI' => '/foo/bar']),
             $this->baseRequestData['get'],
             $this->baseRequestData['post'],
