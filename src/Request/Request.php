@@ -200,9 +200,9 @@ class Request
      *
      * @param string $key The name of the get variable to retrieve
      *
-     * @return string The value of the get variable
+     * @return mixed The value of the get variable
      */
-    public function get(string $key): string
+    public function get(string $key)
     {
         if (array_key_exists($key, $this->get)) {
             return $this->get[$key];
@@ -226,9 +226,9 @@ class Request
      *
      * @param string $key The name of the post variable to retrieve
      *
-     * @return string The value of the post variable
+     * @return mixed The value of the post variable
      */
-    public function post(string $key): string
+    public function post(string $key)
     {
         if (array_key_exists($key, $this->post)) {
             return $this->post[$key];
