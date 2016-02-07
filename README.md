@@ -8,6 +8,18 @@ HTTP package of the CodeCollab project
 
 PHP7+
 
+## Installation
+
+Include the library in your project using composer:
+
+    {
+        "require-dev": {
+            "codecollab/http": "1.0.*"
+        }
+    }
+
+## Usage
+
 ## Contributing
 
 [How to contribute][contributing]
