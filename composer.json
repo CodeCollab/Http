@@ -1,7 +1,7 @@
 {
     "name": "codecollab/http",
     "description": "Http package of the CodeCollab project",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "type": "library",
     "keywords": ["codecollab", "http", "network", "session", "request", "response", "cookie"],
     "homepage": "https://github.com/CodeCollab/Http",
@@ -15,12 +15,12 @@
     "autoload": {
         "psr-4": {"CodeCollab\\Http\\": "src/"}
     },
-    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
-        "php": ">=7.0-dev",
-        "codecollab/encryption": "dev-master"
+        "php": "7.0.*",
+        "codecollab/encryption": "1.0.*"
     },
     "require-dev": {
-        "phpunit/phpunit": "^5"
+        "phpunit/phpunit": "5.1.*"
     }
 }
