@@ -3,6 +3,7 @@
 namespace CodeCollabTest\Unit\Http\Session;
 
 use CodeCollab\Http\Session\Native;
+use CodeCollab\Http\Session\Session;
 
 class NativeTest extends \PHPUnit_Framework_TestCase
 {
@@ -11,12 +12,10 @@ class NativeTest extends \PHPUnit_Framework_TestCase
      */
     public function testImplementsCorrectInterface()
     {
-        $this->setExpectedExceptionRegExp(
-            'PHPUnit_Framework_Error_Warning',
-            '/Cannot send session cookie - headers already sent/'
-        );
+        $this->expectException(\PHPUnit_Framework_Error_Warning::class);
+        $this->expectExceptionMessageRegExp('/Cannot send session cookie - headers already sent by/');
 
-        $this->assertInstanceOf('CodeCollab\Http\Session\Session', new Native('/', '.example.com', true));
+        $this->assertInstanceOf(Session::class, new Native('/', '.example.com', true));
     }
 
     /**
@@ -25,10 +24,8 @@ class NativeTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetWithoutBeingSet()
     {
-        $this->setExpectedExceptionRegExp(
-            'PHPUnit_Framework_Error_Notice',
-            '/A session had already been started/'
-        );
+        $this->expectException(\PHPUnit_Framework_Error_Notice::class);
+        $this->expectExceptionMessageRegExp('/A session had already been started/');
 
         $this->assertNull((new Native('/', '.example.com', true))->get('foo'));
     }
@@ -40,10 +37,8 @@ class NativeTest extends \PHPUnit_Framework_TestCase
      */
     public function testSet()
     {
-        $this->setExpectedExceptionRegExp(
-            'PHPUnit_Framework_Error_Notice',
-            '/A session had already been started/'
-        );
+        $this->expectException(\PHPUnit_Framework_Error_Notice::class);
+        $this->expectExceptionMessageRegExp('/A session had already been started/');
 
         $session = new Native('/', '.example.com', true);
 
@@ -58,10 +53,8 @@ class NativeTest extends \PHPUnit_Framework_TestCase
      */
     public function testExistsDoesntExist()
     {
-        $this->setExpectedExceptionRegExp(
-            'PHPUnit_Framework_Error_Notice',
-            '/A session had already been started/'
-        );
+        $this->expectException(\PHPUnit_Framework_Error_Notice::class);
+        $this->expectExceptionMessageRegExp('/A session had already been started/');
 
         $session = new Native('/', '.example.com', true);
 
@@ -75,10 +68,8 @@ class NativeTest extends \PHPUnit_Framework_TestCase
      */
     public function testExistsDoesExist()
     {
-        $this->setExpectedExceptionRegExp(
-            'PHPUnit_Framework_Error_Notice',
-            '/A session had already been started/'
-        );
+        $this->expectException(\PHPUnit_Framework_Error_Notice::class);
+        $this->expectExceptionMessageRegExp('/A session had already been started/');
 
         $session = new Native('/', '.example.com', true);
 
@@ -94,10 +85,8 @@ class NativeTest extends \PHPUnit_Framework_TestCase
      */
     public function testUnset()
     {
-        $this->setExpectedExceptionRegExp(
-            'PHPUnit_Framework_Error_Notice',
-            '/A session had already been started/'
-        );
+        $this->expectException(\PHPUnit_Framework_Error_Notice::class);
+        $this->expectExceptionMessageRegExp('/A session had already been started/');
 
         $session = new Native('/', '.example.com', true);
 
@@ -112,10 +101,8 @@ class NativeTest extends \PHPUnit_Framework_TestCase
      */
     public function testDestroy()
     {
-        $this->setExpectedExceptionRegExp(
-            'PHPUnit_Framework_Error_Notice',
-            '/A session had already been started/'
-        );
+        $this->expectException(\PHPUnit_Framework_Error_Notice::class);
+        $this->expectExceptionMessageRegExp('/A session had already been started/');
 
         $session = new Native('/', '.example.com', true);
 
@@ -128,10 +115,8 @@ class NativeTest extends \PHPUnit_Framework_TestCase
      */
     public function testRegenerate()
     {
-        $this->setExpectedExceptionRegExp(
-            'PHPUnit_Framework_Error_Notice',
-            '/A session had already been started/'
-        );
+        $this->expectException(\PHPUnit_Framework_Error_Notice::class);
+        $this->expectExceptionMessageRegExp('/A session had already been started/');
 
         $session = new Native('/', '.example.com', true);
 
