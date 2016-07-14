@@ -6,8 +6,6 @@ use CodeCollab\Http\Response\StatusCode;
 
 class StatusCodeTest extends \PHPUnit_Framework_TestCase
 {
-    protected $class = 'CodeCollab\Http\Response\StatusCode';
-
     /**
      *
      */

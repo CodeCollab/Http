@@ -3,6 +3,10 @@
 namespace CodeCollabTest\Unit\Http\Response;
 
 use CodeCollab\Http\Response\Response;
+use CodeCollab\Http\Response\StatusCode;
+use CodeCollab\Http\Request\Request;
+use CodeCollab\Http\Cookie\Factory;
+use CodeCollab\Http\Cookie\Cookie;
 
 class ResponseTest extends \PHPUnit_Framework_TestCase
 {
@@ -12,17 +16,13 @@ class ResponseTest extends \PHPUnit_Framework_TestCase
      */
     public function testSetContent()
     {
-        $request = $this->getMockBuilder('CodeCollab\Http\Request\Request')
+        $request = $this->getMockBuilder(Request::class)
             ->disableOriginalConstructor()
             ->getMock()
         ;
 
-        $statusCode = $this->getMock('CodeCollab\Http\Response\StatusCode');
-
-        $cookieFactory = $this->getMockBuilder('CodeCollab\Http\Cookie\Factory')
-            ->disableOriginalConstructor()
-            ->getMock()
-        ;
+        $statusCode    = $this->createMock(StatusCode::class);
+        $cookieFactory = $this->createMock(Factory::class);
 
         $this->assertNull((new Response($request, $statusCode, $cookieFactory))->setContent('foo'));
     }
@@ -33,17 +33,9 @@ class ResponseTest extends \PHPUnit_Framework_TestCase
      */
     public function testSetStatusCodeWithoutTextualRepresentation()
     {
-        $request = $this->getMockBuilder('CodeCollab\Http\Request\Request')
-            ->disableOriginalConstructor()
-            ->getMock()
-        ;
-
-        $statusCode = $this->getMock('CodeCollab\Http\Response\StatusCode');
-
-        $cookieFactory = $this->getMockBuilder('CodeCollab\Http\Cookie\Factory')
-            ->disableOriginalConstructor()
-            ->getMock()
-        ;
+        $request       = $this->createMock(Request::class);
+        $statusCode    = $this->createMock(StatusCode::class);
+        $cookieFactory = $this->createMock(Factory::class);
 
         $this->assertNull((new Response($request, $statusCode, $cookieFactory))->setStatusCode(200));
     }
@@ -54,17 +46,9 @@ class ResponseTest extends \PHPUnit_Framework_TestCase
      */
     public function testSetStatusCodeWithTextualRepresentation()
     {
-        $request = $this->getMockBuilder('CodeCollab\Http\Request\Request')
-            ->disableOriginalConstructor()
-            ->getMock()
-        ;
-
-        $statusCode = $this->getMock('CodeCollab\Http\Response\StatusCode');
-
-        $cookieFactory = $this->getMockBuilder('CodeCollab\Http\Cookie\Factory')
-            ->disableOriginalConstructor()
-            ->getMock()
-        ;
+        $request       = $this->createMock(Request::class);
+        $statusCode    = $this->createMock(StatusCode::class);
+        $cookieFactory = $this->createMock(Factory::class);
 
         $this->assertNull((new Response($request, $statusCode, $cookieFactory))->setStatusCode(200, 'Foo'));
     }
@@ -75,17 +59,9 @@ class ResponseTest extends \PHPUnit_Framework_TestCase
      */
     public function testAddHeader()
     {
-        $request = $this->getMockBuilder('CodeCollab\Http\Request\Request')
-            ->disableOriginalConstructor()
-            ->getMock()
-        ;
-
-        $statusCode = $this->getMock('CodeCollab\Http\Response\StatusCode');
-
-        $cookieFactory = $this->getMockBuilder('CodeCollab\Http\Cookie\Factory')
-            ->disableOriginalConstructor()
-            ->getMock()
-        ;
+        $request       = $this->createMock(Request::class);
+        $statusCode    = $this->createMock(StatusCode::class);
+        $cookieFactory = $this->createMock(Factory::class);
 
         $this->assertNull((new Response($request, $statusCode, $cookieFactory))->addHeader('foo', 'bar'));
     }
@@ -96,22 +72,10 @@ class ResponseTest extends \PHPUnit_Framework_TestCase
      */
     public function testAddCookie()
     {
-        $request = $this->getMockBuilder('CodeCollab\Http\Request\Request')
-            ->disableOriginalConstructor()
-            ->getMock()
-        ;
-
-        $statusCode = $this->getMock('CodeCollab\Http\Response\StatusCode');
-
-        $cookieFactory = $this->getMockBuilder('CodeCollab\Http\Cookie\Factory')
-            ->disableOriginalConstructor()
-            ->getMock()
-        ;
-
-        $cookie = $this->getMockBuilder('CodeCollab\Http\Cookie\Cookie')
-            ->disableOriginalConstructor()
-            ->getMock()
-        ;
+        $request       = $this->createMock(Request::class);
+        $statusCode    = $this->createMock(StatusCode::class);
+        $cookieFactory = $this->createMock(Factory::class);
+        $cookie        = $this->createMock(Cookie::class);
 
         $cookieFactory
             ->expects($this->once())
@@ -131,24 +95,14 @@ class ResponseTest extends \PHPUnit_Framework_TestCase
      */
     public function testSendWithoutCookiesOrHeadersAndBody()
     {
-        $request = $this->getMockBuilder('CodeCollab\Http\Request\Request')
-            ->disableOriginalConstructor()
-            ->getMock()
-        ;
-
-        $statusCode = $this->getMock('CodeCollab\Http\Response\StatusCode');
-
-        $cookieFactory = $this->getMockBuilder('CodeCollab\Http\Cookie\Factory')
-            ->disableOriginalConstructor()
-            ->getMock()
-        ;
+        $request       = $this->createMock(Request::class);
+        $statusCode    = $this->createMock(StatusCode::class);
+        $cookieFactory = $this->createMock(Factory::class);
 
         $response = new Response($request, $statusCode, $cookieFactory);
 
-        $this->setExpectedExceptionRegExp(
-            'PHPUnit_Framework_Error_Warning',
-            '/Cannot modify header information - headers already sent by/'
-        );
+        $this->expectException(\PHPUnit_Framework_Error_Warning::class);
+        $this->expectExceptionMessageRegExp('/Cannot modify header information - headers already sent by/');
 
         $this->assertSame('', $response->send());
     }
@@ -159,25 +113,15 @@ class ResponseTest extends \PHPUnit_Framework_TestCase
      */
     public function testSendWithoutCookiesOrHeadersHeadRequest()
     {
-        $request = $this->getMockBuilder('CodeCollab\Http\Request\Request')
-            ->disableOriginalConstructor()
-            ->getMock()
-        ;
-
-        $statusCode = $this->getMock('CodeCollab\Http\Response\StatusCode');
-
-        $cookieFactory = $this->getMockBuilder('CodeCollab\Http\Cookie\Factory')
-            ->disableOriginalConstructor()
-            ->getMock()
-        ;
+        $request       = $this->createMock(Request::class);
+        $statusCode    = $this->createMock(StatusCode::class);
+        $cookieFactory = $this->createMock(Factory::class);
 
         $response = new Response($request, $statusCode, $cookieFactory);
         $response->setContent('foo');
 
-        $this->setExpectedExceptionRegExp(
-            'PHPUnit_Framework_Error_Warning',
-            '/Cannot modify header information - headers already sent by/'
-        );
+        $this->expectException(\PHPUnit_Framework_Error_Warning::class);
+        $this->expectExceptionMessageRegExp('/Cannot modify header information - headers already sent by/');
 
         $this->assertSame('', $response->send());
     }
@@ -188,25 +132,15 @@ class ResponseTest extends \PHPUnit_Framework_TestCase
      */
     public function testSendWithoutCookiesOrHeaders()
     {
-        $request = $this->getMockBuilder('CodeCollab\Http\Request\Request')
-            ->disableOriginalConstructor()
-            ->getMock()
-        ;
-
-        $statusCode = $this->getMock('CodeCollab\Http\Response\StatusCode');
-
-        $cookieFactory = $this->getMockBuilder('CodeCollab\Http\Cookie\Factory')
-            ->disableOriginalConstructor()
-            ->getMock()
-        ;
+        $request       = $this->createMock(Request::class);
+        $statusCode    = $this->createMock(StatusCode::class);
+        $cookieFactory = $this->createMock(Factory::class);
 
         $response = new Response($request, $statusCode, $cookieFactory);
         $response->setContent('foo');
 
-        $this->setExpectedExceptionRegExp(
-            'PHPUnit_Framework_Error_Warning',
-            '/Cannot modify header information - headers already sent by/'
-        );
+        $this->expectException(\PHPUnit_Framework_Error_Warning::class);
+        $this->expectExceptionMessageRegExp('/Cannot modify header information - headers already sent by/');
 
         $this->assertSame('foo', $response->send());
     }
@@ -221,22 +155,10 @@ class ResponseTest extends \PHPUnit_Framework_TestCase
      */
     public function testSendWithCookiesAndHeaders()
     {
-        $request = $this->getMockBuilder('CodeCollab\Http\Request\Request')
-            ->disableOriginalConstructor()
-            ->getMock()
-        ;
-
-        $statusCode = $this->getMock('CodeCollab\Http\Response\StatusCode');
-
-        $cookie = $this->getMockBuilder('CodeCollab\Http\Cookie\Cookie')
-            ->disableOriginalConstructor()
-            ->getMock()
-        ;
-
-        $cookieFactory = $this->getMockBuilder('CodeCollab\Http\Cookie\Factory')
-            ->disableOriginalConstructor()
-            ->getMock()
-        ;
+        $request       = $this->createMock(Request::class);
+        $statusCode    = $this->createMock(StatusCode::class);
+        $cookie        = $this->createMock(Cookie::class);
+        $cookieFactory = $this->createMock(Factory::class);
 
         $cookieFactory
             ->expects($this->once())
@@ -251,10 +173,8 @@ class ResponseTest extends \PHPUnit_Framework_TestCase
         $response->addHeader('foo', 'bar');
         $response->setContent('foo');
 
-        $this->setExpectedExceptionRegExp(
-            'PHPUnit_Framework_Error_Warning',
-            '/Cannot modify header information - headers already sent by/'
-        );
+        $this->expectException(\PHPUnit_Framework_Error_Warning::class);
+        $this->expectExceptionMessageRegExp('/Cannot modify header information - headers already sent by/');
 
         $this->assertSame('foo', $response->send());
     }
