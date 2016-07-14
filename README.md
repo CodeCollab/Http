@@ -14,7 +14,7 @@ Include the library in your project using composer:
 
     {
         "require-dev": {
-            "codecollab/http": "1.0.*"
+            "codecollab/http": "^1"
         }
     }
 

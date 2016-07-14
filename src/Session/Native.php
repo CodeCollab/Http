@@ -10,7 +10,7 @@
  * @author     Pieter Hordijk <info@pieterhordijk.com>
  * @copyright  Copyright (c) 2015 Pieter Hordijk <https://github.com/PeeHaa>
  * @license    See the LICENSE file
- * @version    1.0.0
+ * @version    1.1.0
  */
 namespace CodeCollab\Http\Session;
 

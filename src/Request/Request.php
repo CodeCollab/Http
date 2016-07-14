@@ -15,7 +15,7 @@
  * @copyright  Copyright (c) 2015 The Arya contributors
  * @license    See the LICENSE file
  * @license    https://github.com/rdlowrey/Arya/blob/master/LICENSE.md (MIT)
- * @version    1.0.0
+ * @version    1.1.0
  */
 namespace CodeCollab\Http\Request;
 

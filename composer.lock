@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e35b2001ee8f9f09205a7a5ac83dbe0e",
-    "content-hash": "d9f5e51ca102340f9adc75b9fb26cb5b",
+    "hash": "e8e27c60b5896eea16a9ceaffae60e30",
+    "content-hash": "d34c0365bfb80dd28ab72c58d08ec9a1",
     "packages": [
         {
             "name": "codecollab/encryption",
