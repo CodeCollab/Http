@@ -70,9 +70,9 @@ class Response
     /**
      * Creates instance
      *
-     * @param \CodeCollab\Http\Request\Request $request       The request object
-     * @param \CodeCollab\Http\Response        $statusCode    The status code object
-     * @param \CodeCollab\Http\Cookie\Factory  $cookieFactory Instance of a cookie factory
+     * @param \CodeCollab\Http\Request\Request     $request       The request object
+     * @param \CodeCollab\Http\Response\StatusCode $statusCode    The status code object
+     * @param \CodeCollab\Http\Cookie\Factory      $cookieFactory Instance of a cookie factory
      */
     public function __construct(Request $request, StatusCode $statusCode, CookieFactory $cookieFactory)
     {
