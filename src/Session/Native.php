@@ -29,7 +29,7 @@ class Native implements Session
      *
      * @param string $path   Path on the domain where the cookie will work, use a single slash ('/') for all paths on
      *                       the domain
-     * @param strng  $domain Cookie domain, for example 'www.php.net'. To make cookies visible on all subdomains then
+     * @param string $domain Cookie domain, for example 'www.php.net'. To make cookies visible on all subdomains then
      *                       the domain must be prefixed with a dot like '.php.net'
      * @param bool   $secure If true cookie will only be sent over secure connections.
      */
