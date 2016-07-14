@@ -17,10 +17,10 @@
     },
     "prefer-stable": true,
     "require": {
-        "php": "7.0.*",
-        "codecollab/encryption": "1.0.*"
+        "php": "^7",
+        "codecollab/encryption": "^2"
     },
     "require-dev": {
-        "phpunit/phpunit": "5.1.*"
+        "phpunit/phpunit": "^5.4"
     }
 }
