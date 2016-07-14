@@ -3,6 +3,8 @@
 namespace CodeCollabTest\Unit\Http\Cookie;
 
 use CodeCollab\Http\Cookie\Factory;
+use CodeCollab\Encryption\Encryptor;
+use CodeCollab\Http\Cookie\Cookie;
 
 class FactoryTest extends \PHPUnit_Framework_TestCase
 {
@@ -12,10 +14,10 @@ class FactoryTest extends \PHPUnit_Framework_TestCase
      */
     public function testBuild()
     {
-        $encryptor = $this->getMock('CodeCollab\Encryption\Encryptor');
+        $encryptor = $this->createMock(Encryptor::class);
 
         $this->assertInstanceof(
-            'CodeCollab\Http\Cookie\Cookie',
+            Cookie::class,
             (new Factory($encryptor, '.example.com', true))->build('foo', 'bar', new \DateTime())
         );
     }
