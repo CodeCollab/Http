@@ -120,11 +120,11 @@ class Response
     /**
      * Adds a cookie
      *
-     * @param string    $key    The name of the cookie
-     * @param mixed     $value  The value pf the cookie
-     * @param \DateTime $expire The expiration date
+     * @param string             $key    The name of the cookie
+     * @param mixed              $value  The value pf the cookie
+     * @param \DateTimeInterface $expire The expiration date
      */
-    public function addCookie(string $key, $value, \DateTime $expire)
+    public function addCookie(string $key, $value, \DateTimeInterface $expire)
     {
         $this->cookies[$key] = $this->cookieFactory->build($key, $value, $expire);
     }
