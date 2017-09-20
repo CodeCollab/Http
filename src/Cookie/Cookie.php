@@ -35,7 +35,7 @@ class Cookie
     private $value;
 
     /**
-     * @var \DateTime The expiration date
+     * @var \DateTimeInterface The expiration date
      */
     private $expire;
 
@@ -62,14 +62,14 @@ class Cookie
     /**
      * Creates instance
      *
-     * @param string    $name   The name of the cookie
-     * @param mixed     $value  The value of the cookie
-     * @param \DateTime $expire The expiration date
-     * @param string    $path   The path on which the cookie is valid
-     * @param string    $domain The domain on which the cookie is valid
-     * @param bool      $secure Whether the cookie must only be sent over SSL/TLS
+     * @param string             $name   The name of the cookie
+     * @param mixed              $value  The value of the cookie
+     * @param \DateTimeInterface $expire The expiration date
+     * @param string             $path   The path on which the cookie is valid
+     * @param string             $domain The domain on which the cookie is valid
+     * @param bool               $secure Whether the cookie must only be sent over SSL/TLS
      */
-    public function __construct(string $name, $value, \DateTime $expire, string $path, string $domain, bool $secure)
+    public function __construct(string $name, $value, \DateTimeInterface $expire, string $path, string $domain, bool $secure)
     {
         $this->name   = $name;
         $this->value  = $value;
