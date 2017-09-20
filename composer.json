@@ -1,7 +1,6 @@
 {
     "name": "codecollab/http",
     "description": "Http package of the CodeCollab project",
-    "version": "1.1.0",
     "type": "library",
     "keywords": ["codecollab", "http", "network", "session", "request", "response", "cookie"],
     "homepage": "https://github.com/CodeCollab/Http",
