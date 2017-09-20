@@ -58,13 +58,13 @@ class Factory
     /**
      * Builds a new cookie
      *
-     * @param string    $key    The name of the cookie
-     * @param mixed     $value  The value of the cookie
-     * @param \DateTime $expire The expiration time of the cookie
+     * @param string             $key    The name of the cookie
+     * @param mixed              $value  The value of the cookie
+     * @param \DateTimeInterface $expire The expiration time of the cookie
      *
      * @return \CodeCollab\Http\Cookie\Cookie The built cookie
      */
-    public function build(string $key, $value, \DateTime $expire = null): Cookie
+    public function build(string $key, $value, \DateTimeInterface $expire = null): Cookie
     {
         return new Cookie($key, $this->encryptor->encrypt($value), $expire, '/', $this->domain, $this->secure);
     }
