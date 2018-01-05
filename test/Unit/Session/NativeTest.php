@@ -24,8 +24,8 @@ class NativeTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetWithoutBeingSet()
     {
-        $this->expectException(\PHPUnit_Framework_Error_Notice::class);
-        $this->expectExceptionMessageRegExp('/A session had already been started/');
+        $this->expectException(\PHPUnit_Framework_Error_Warning::class);
+        $this->expectExceptionMessageRegExp('/Cannot send session cookie - headers already sent by/');
 
         $this->assertNull((new Native('/', '.example.com', true))->get('foo'));
     }
@@ -37,8 +37,8 @@ class NativeTest extends \PHPUnit_Framework_TestCase
      */
     public function testSet()
     {
-        $this->expectException(\PHPUnit_Framework_Error_Notice::class);
-        $this->expectExceptionMessageRegExp('/A session had already been started/');
+        $this->expectException(\PHPUnit_Framework_Error_Warning::class);
+        $this->expectExceptionMessageRegExp('/Cannot send session cookie - headers already sent by/');
 
         $session = new Native('/', '.example.com', true);
 
@@ -53,8 +53,8 @@ class NativeTest extends \PHPUnit_Framework_TestCase
      */
     public function testExistsDoesntExist()
     {
-        $this->expectException(\PHPUnit_Framework_Error_Notice::class);
-        $this->expectExceptionMessageRegExp('/A session had already been started/');
+        $this->expectException(\PHPUnit_Framework_Error_Warning::class);
+        $this->expectExceptionMessageRegExp('/Cannot send session cookie - headers already sent by/');
 
         $session = new Native('/', '.example.com', true);
 
@@ -68,8 +68,8 @@ class NativeTest extends \PHPUnit_Framework_TestCase
      */
     public function testExistsDoesExist()
     {
-        $this->expectException(\PHPUnit_Framework_Error_Notice::class);
-        $this->expectExceptionMessageRegExp('/A session had already been started/');
+        $this->expectException(\PHPUnit_Framework_Error_Warning::class);
+        $this->expectExceptionMessageRegExp('/Cannot send session cookie - headers already sent by/');
 
         $session = new Native('/', '.example.com', true);
 
@@ -85,8 +85,8 @@ class NativeTest extends \PHPUnit_Framework_TestCase
      */
     public function testUnset()
     {
-        $this->expectException(\PHPUnit_Framework_Error_Notice::class);
-        $this->expectExceptionMessageRegExp('/A session had already been started/');
+        $this->expectException(\PHPUnit_Framework_Error_Warning::class);
+        $this->expectExceptionMessageRegExp('/Cannot send session cookie - headers already sent by/');
 
         $session = new Native('/', '.example.com', true);
 
@@ -101,8 +101,8 @@ class NativeTest extends \PHPUnit_Framework_TestCase
      */
     public function testDestroy()
     {
-        $this->expectException(\PHPUnit_Framework_Error_Notice::class);
-        $this->expectExceptionMessageRegExp('/A session had already been started/');
+        $this->expectException(\PHPUnit_Framework_Error_Warning::class);
+        $this->expectExceptionMessageRegExp('/Cannot send session cookie - headers already sent by/');
 
         $session = new Native('/', '.example.com', true);
 
@@ -115,8 +115,8 @@ class NativeTest extends \PHPUnit_Framework_TestCase
      */
     public function testRegenerate()
     {
-        $this->expectException(\PHPUnit_Framework_Error_Notice::class);
-        $this->expectExceptionMessageRegExp('/A session had already been started/');
+        $this->expectException(\PHPUnit_Framework_Error_Warning::class);
+        $this->expectExceptionMessageRegExp('/Cannot send session cookie - headers already sent by/');
 
         $session = new Native('/', '.example.com', true);
 
